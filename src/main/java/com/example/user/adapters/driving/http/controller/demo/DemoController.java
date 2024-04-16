@@ -15,4 +15,7 @@ public class DemoController {
     public String welcome(){
         return "protect endpoint";
     }
+
+    @PostMapping(value = "registerTutor")
+    public String registerTutor(){ return "register tutor";}
 }
