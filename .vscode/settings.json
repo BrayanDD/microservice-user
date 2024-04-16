@@ -1,0 +1,7 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cSpell.enableFiletypes": [
+        "java"
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
+}

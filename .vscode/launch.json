@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "UserMicroservice",
+            "request": "launch",
+            "mainClass": "com.example.user.UserMicroservice",
+            "projectName": "BootCamp"
+        },
+        {
+            "type": "java",
+            "name": "BootcampMicroservice",
+            "request": "launch",
+            "mainClass": "com.example.bootcamp.BootcampMicroservice",
+            "projectName": "BootCamp"
+        },
+        {
+            "type": "java",
+            "name": "onclass",
+            "request": "launch",
+            "mainClass": "com.example.bootcamp.onclass",
+            "projectName": "BootCamp"
+        },
+        {
+            "type": "java",
+            "name": "onclass",
+            "request": "launch",
+            "mainClass": "com.example.Bootcamp.onclass",
+            "projectName": "BootCamp"
+        },
+        {
+            "type": "java",
+            "name": "historyTechnologies",
+            "request": "launch",
+            "mainClass": "com.example.historyTechnologies.historyTechnologies",
+            "projectName": "pokedex_hexagonal"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "PokedexHexagonalApplication",
+            "request": "launch",
+            "mainClass": "com.example.pokedex_hexagonal.PokedexHexagonalApplication",
+            "projectName": "pokedex_hexagonal"
+        }
+    ]
+}
