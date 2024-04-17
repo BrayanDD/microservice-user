@@ -40,13 +40,9 @@ public class UserJpaAdapter implements IUserPersistencePort {
         
         UserEntity userEntity = userEntityMapper.toEntity(register);
 
-         String password = userEntity.getPassword();
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    
-         String passwordEncode =  passwordEncoder.encode(password);
-
-         userEntity.setPassword(passwordEncode);
+        userEntity.setPassword(passwordEncoder.encode(userEntity.getPassword()));
 
         rolRepository.findById(idRolCreate).ifPresent(userEntity::setRole);
 
@@ -55,5 +51,6 @@ public class UserJpaAdapter implements IUserPersistencePort {
 
         return jwtService.getToken(savedUserEntity);
     }
-    
+
+
 }
