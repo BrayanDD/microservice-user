@@ -3,6 +3,7 @@ package com.example.user.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -16,6 +17,7 @@ import lombok.RequiredArgsConstructor;
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
@@ -24,11 +26,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-            .csrf(crsf->
-            crsf.disable())
+
+            .csrf().disable()
             .authorizeRequests(authorizeRequests ->
                 authorizeRequests
-                    .antMatchers("/user/**").permitAll() 
+                    .antMatchers("/user/**").permitAll()
+                        .antMatchers("/api/v1/registerStudent").hasAnyRole("ADMIN","TUTOR")
+                        .antMatchers("/api/v1/registerTutor").hasRole("ADMIN")
                     .anyRequest().authenticated()
             )
             .sessionManagement(sessionManager -> 

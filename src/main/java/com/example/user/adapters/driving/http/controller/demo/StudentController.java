@@ -9,13 +9,9 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class DemoController {
+public class StudentController {
 
-    @PostMapping(value = "demo")
-    public String welcome(){
-        return "protect endpoint";
-    }
+    @PostMapping(value = "registerStudent")
 
-    @PostMapping(value = "registerTutor")
-    public String registerTutor(){ return "register tutor";}
+    public String registerStudent(){ return "registerStudent";}
 }
