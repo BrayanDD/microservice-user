@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class StudentController {
 
+
     @PostMapping(value = "registerStudent")
 
     public String registerStudent(){ return "registerStudent";}
