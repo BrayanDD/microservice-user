@@ -34,6 +34,7 @@
 
             if (token == null) {
                 filterChain.doFilter(request, response);
+                return ;
             }
 
             email = jwtService.getEmailFromToken(token);

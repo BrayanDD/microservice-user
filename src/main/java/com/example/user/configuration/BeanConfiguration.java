@@ -14,6 +14,7 @@ import com.example.user.domain.spi.IUserPersistencePort;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @RequiredArgsConstructor
@@ -24,10 +25,11 @@ public class BeanConfiguration {
     private final RolRepository rolRepository;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
+    private final PasswordEncoder passwordEncoder;
 
     @Bean
     public IUserPersistencePort userPersistencePort(){
-        return new UserJpaAdapter(userRepository,userEntityMapper,rolRepository,jwtService,authenticationManager);
+        return new UserJpaAdapter(userRepository,userEntityMapper, rolRepository, jwtService, passwordEncoder, authenticationManager);
     }
 
     @Bean

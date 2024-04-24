@@ -1,5 +1,6 @@
 package com.example.user.configuration;
 
+import com.example.user.adapters.driven.jpa.mysql.exception.NoDataFoundException;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -44,6 +45,6 @@ public class ApplicationConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         return userEmail -> userRepository.findByEmail(userEmail)
-        .orElseThrow(()-> new UsernameNotFoundException("Email not found"));
+        .orElseThrow(NoDataFoundException::new);
     }
 }

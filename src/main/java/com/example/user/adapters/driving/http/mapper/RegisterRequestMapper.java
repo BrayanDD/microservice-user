@@ -3,7 +3,7 @@ package com.example.user.adapters.driving.http.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
-import com.example.user.adapters.driven.jpa.mysql.entity.UserEntity;
+
 import com.example.user.adapters.driving.http.dtos.request.RegisterRequest;
 
 import com.example.user.domain.model.User;
@@ -15,5 +15,5 @@ public interface RegisterRequestMapper {
 
     User toRegister(RegisterRequest registerRequest);
 
-    UserEntity toUserEntity(User user);
+
 }

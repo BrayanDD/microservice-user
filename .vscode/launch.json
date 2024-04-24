@@ -9,6 +9,13 @@
             "name": "UserMicroservice",
             "request": "launch",
             "mainClass": "com.example.user.UserMicroservice",
+            "projectName": "User"
+        },
+        {
+            "type": "java",
+            "name": "UserMicroservice",
+            "request": "launch",
+            "mainClass": "com.example.user.UserMicroservice",
             "projectName": "BootCamp"
         },
         {

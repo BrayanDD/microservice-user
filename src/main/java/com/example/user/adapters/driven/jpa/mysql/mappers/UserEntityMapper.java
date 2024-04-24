@@ -1,8 +1,8 @@
 package com.example.user.adapters.driven.jpa.mysql.mappers;
 
-import org.mapstruct.BeforeMapping;
+
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
+
 import org.mapstruct.ReportingPolicy;
 
 import com.example.user.adapters.driven.jpa.mysql.entity.UserEntity;
@@ -19,8 +19,8 @@ public interface UserEntityMapper {
     
 
     UserEntity toEntity(User user);
-    
-    User toUser(UserEntity userEntity);
+
+
 
     
 }
